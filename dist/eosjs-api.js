@@ -341,7 +341,7 @@ var Api = /** @class */ (function () {
     Api.prototype.transact = function (transaction, _a) {
         var _b = _a === void 0 ? {} : _a, _c = _b.broadcast, broadcast = _c === void 0 ? true : _c, blocksBehind = _b.blocksBehind, expireSeconds = _b.expireSeconds;
         return __awaiter(this, void 0, void 0, function () {
-            var info, refBlock, abis, _d, _e, serializedTransaction, availableKeys, requiredKeys, signatures, pushTransactionArgs;
+            var info, refBlock, abis, _d, _e, serializedTransaction, availableKeys, requiredKeys, pushTransactionArgs;
             return __generator(this, function (_f) {
                 switch (_f.label) {
                     case 0:
@@ -389,8 +389,7 @@ var Api = /** @class */ (function () {
                                 abis: abis,
                             })];
                     case 11:
-                        signatures = _f.sent();
-                        pushTransactionArgs = { signatures: signatures, serializedTransaction: serializedTransaction };
+                        pushTransactionArgs = _f.sent();
                         if (broadcast) {
                             return [2 /*return*/, this.pushSignedTransaction(pushTransactionArgs)];
                         }
